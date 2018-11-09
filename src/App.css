@@ -1,0 +1,336 @@
+.App {
+    position: relative;
+    margin: 10px auto 0;
+    width: 300px;
+    height: 534px;
+    background-image: url("bg.png");
+    box-shadow: 2px 2px 15px #666666;
+    box-sizing: border-box;
+}
+
+.App button{
+    text-align: center;
+    color: white;
+    border: none;
+    box-shadow: 2px 2px 15px #666666;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.App button:focus{
+    outline: none;
+}
+.App button:active{
+    background-color: #666666;
+}
+.App p{
+    margin: 0;
+}
+
+.App header {
+    position: relative;
+    height: 45px;
+    line-height: 45px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color: #04356c;
+    z-index: 2;
+}
+.App canvas{
+    width:100%;
+    height:100%;
+    border-radius: 5px;
+    border: 5px solid rgba(0,0,0,0);
+    box-shadow: 2px 2px 15px #666666;
+    background-color: rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+/*panel开始*/
+.panel-warp {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.panel-warp:before{
+    content: ' ';
+    position: absolute;
+    top:  45px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 2px;
+    height: 25%;
+    background-color: #666666;
+}
+
+.panel-warp .panel {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 210px;
+    height: 35%;
+    padding: 15px 20px;
+    color: #333333;
+    border-radius: 10px;
+    background-color: #fafafa;
+    box-sizing: border-box;
+}
+.panel-warp .panel:before{
+    content: ' ';
+    position: absolute;
+    top: -5px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 18px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #fafafa;
+}
+.panel-warp .panel .play-button{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 15px;
+    margin: auto;
+    width: 150px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 16px;
+    background-color: green;
+    border-radius: 30px;
+}
+/*panel结束*/
+
+/*Grid开始*/
+.grid{
+    float: left;
+    width: 76.5%;
+    height: calc(80% - 45px);
+    padding: 15px;
+    box-sizing: border-box;
+}
+/*Grid结束*/
+
+/*next-tetris开始*/
+.next-tetris-warp{
+    float: left;
+    width: 23.5%;
+    height: 20%;
+    padding: 15px 15px 0 0;
+    box-sizing: border-box;
+}
+.next-tetris-warp canvas{
+    height: 60%;
+}
+.next-tetris-warp p{
+    height: 20px;
+    line-height: 20px;
+    color: #333333;
+    font-size: 12px;
+    padding-left: 5px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #666666;
+}
+/*next-tetris结束*/
+
+/*account开始*/
+.account-warp{
+    float: left;
+    width: 23.5%;
+    height: 20%;
+    padding: 15px 15px 0 0;
+    box-sizing: border-box;
+}
+.account-warp .account{
+    position: relative;
+}
+.account-warp .account p{
+    height: 20px;
+    line-height: 20px;
+    color: #333333;
+    font-size: 12px;
+    padding-left: 5px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #666666;
+}
+.account-warp .account svg{
+    position: absolute;
+    top: 25px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 9;
+}
+.account-warp .account .number{
+    position: absolute;
+    top: 53px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    color: #04356c;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 10;
+    border: none;
+}
+/*account结束*/
+
+/*seting开始*/
+.seting{
+    float: left;
+    padding: 15px 15px 0 0;
+    width: 23.5%;
+    box-sizing: border-box;
+}
+.seting .button,.seting .mode-toggle{
+    margin-top: 5px;
+    height: 35px;
+    line-height: 35px;
+    cursor: pointer;
+    color: white;
+    font-size: 10px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 2px 2px 15px #666666;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.seting .button.active{
+    background-color: #999999;
+}
+.seting .button.stop{
+    background-color: red;
+}
+.seting .mode-toggle{
+    box-sizing: border-box;
+    margin-top: 15px;
+    border: 5px solid white;
+    background-color: #999999;
+}
+.seting .mode-toggle.active{
+    background-color: #689ad3;
+}
+.seting .mode-toggle .toggle{
+    float: left;
+    width: 50%;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    background-color: #0d56a6;
+    outline: none;
+}
+.seting .mode-toggle.active .toggle{
+    float: right;
+}
+.seting .stop-dialog{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 15;
+    display: none;
+}
+.seting .stop-dialog.active{
+    display: block;
+}
+.seting .stop-dialog .continue{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 150px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    background-color: green;
+    border-radius: 30px;
+    box-shadow: 2px 2px 15px #a0a0a0;
+}
+/*seting结束*/
+
+/*control开始*/
+.control {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    box-sizing: border-box;
+}
+.control .button-group {
+    float: left;
+    width: 60%;
+    height: 100%;
+}
+.control .button-group .button-warp{
+    position: relative;
+    float: left;
+    width: 50%;
+    height: 50%;
+    line-height: 50%;
+}
+.control .button-group .button-warp button{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 70px;
+    height: 35px;
+    font-size: 10px;
+    background-color: #0d56a6;
+    border-radius: 20px;
+}
+.control .accelerate {
+    position: absolute;
+    left: 70%;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    font-size: 12px;
+    width: 70px;
+    height: 45px;
+    border-radius: 25px;
+    background-color: #04356c;
+}
+/*control结束*/
+
+.clear {
+    clear: both;
+}
+
+@media screen and (max-width: 414px) {
+    html, body, #root {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .App {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        box-shadow: none;
+    }
+}
